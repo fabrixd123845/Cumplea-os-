@@ -2,6 +2,9 @@ function showSurprise() {
     var surprise = document.getElementById('surprise');
     surprise.classList.toggle('hidden');
 
+    var audio = document.getElementById('bg-music');
+    audio.play();
+
     if (!surprise.classList.contains('hidden')) {
         var images = surprise.querySelectorAll('img');
         images.forEach(function(img, index) {
@@ -15,10 +18,4 @@ function showSurprise() {
 function showMessageModal(message) {
     document.getElementById('modalMessage').innerText = message;
     $('#messageModal').modal('show');
-}
-
-// Iniciar la música automáticamente
-window.onload = function() {
-    var audio = document.getElementById('bg-music');
-    audio.play();
 }
